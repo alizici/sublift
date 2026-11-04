@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sublift Feedback</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="icon.png">
+<style>
+  /* Opened inside Sublift's Feedback window: the chat fills it. */
+  :root { color-scheme: light dark; }
+  html, body { margin: 0; height: 100%; background: Canvas; color: CanvasText;
+               font: 14px -apple-system, BlinkMacSystemFont, sans-serif; }
+  #wait { position: fixed; inset: 0; display: grid; place-items: center; opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="wait">Connecting…</div>
+<script>
+  // Sublift passes its version, the macOS version and the Mac model in the address; they are attached to the chat
+  // so bug reports need no questions about them.
+  var q = new URLSearchParams(location.search);
+  var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+  Tawk_API.onLoad = function () {
+    document.getElementById("wait").style.display = "none";
+    Tawk_API.maximize();
+    var a = {};
+    if (q.get("app")) a["sublift-version"] = q.get("app");
+    if (q.get("os")) a["macos"] = q.get("os");
+    if (q.get("mac")) a["mac-model"] = q.get("mac");
+    if (Object.keys(a).length) Tawk_API.setAttributes(a, function () {});
+  };
+  // Closing the chat panel inside the window would leave an empty page: open it again.
+  Tawk_API.onChatMinimized = function () { Tawk_API.maximize(); };
+  (function () {
+    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = "https://embed.tawk.to/6aeba87013bfb93c33d82a7c/1k6k8ju9n";
+    s1.charset = "UTF-8";
+    s1.setAttribute("crossorigin", "*");
+    s0.parentNode.insertBefore(s1, s0);
+  })();
+</script>
+</body>
+</html>
