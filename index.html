@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sublift Support</title>
+<meta name="description" content="Sublift turns the subtitles burned into a video into an SRT file with frame-exact timing. Help, shortcuts and contact.">
+<link rel="icon" href="icon.png">
+<style>
+  :root {
+    --bg: #ffffff; --text: #1d1d1f; --muted: #6e6e73; --line: #e5e5ea; --accent: #6a4cf5; --card: #f5f5f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111113; --text: #f5f5f7; --muted: #a1a1a6; --line: #2c2c2e; --accent: #9b85ff; --card: #1c1c1e; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 56px 20px 80px; }
+  header { display: flex; align-items: center; gap: 20px; margin-bottom: 40px; }
+  header img { width: 88px; height: 88px; }
+  h1 { font-size: 34px; line-height: 1.15; margin: 0; letter-spacing: -0.02em; }
+  header p { margin: 4px 0 0; color: var(--muted); }
+  h2 { font-size: 22px; margin: 44px 0 12px; letter-spacing: -0.01em; }
+  h3 { font-size: 17px; margin: 22px 0 4px; }
+  p, li { color: var(--text); }
+  .muted { color: var(--muted); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ol, ul { padding-left: 22px; }
+  li { margin: 6px 0; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  td { padding: 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td:first-child { width: 110px; white-space: nowrap; }
+  kbd { display: inline-block; min-width: 24px; padding: 1px 7px; border: 1px solid var(--line); border-radius: 6px;
+        background: var(--card); font: 13px/1.6 -apple-system, sans-serif; text-align: center; }
+  .contact { background: var(--card); border-radius: 14px; padding: 20px 22px; margin-top: 12px; }
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  footer a { margin-right: 16px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="icon.png" alt="Sublift icon">
+    <div>
+      <h1>Sublift</h1>
+      <p>Turns the subtitles burned into a video into an SRT file, exact to the frame.</p>
+    </div>
+  </header>
+
+  <h2>Getting started</h2>
+  <ol>
+    <li>Create a project for a series with <b>New Project</b> (⌘N).</li>
+    <li>Drop its episodes on the project, or drop a whole folder. Episodes are numbered from their file names.</li>
+    <li>On a project's first episode, check the subtitle area: drag its top or bottom edge if needed, then choose <b>Read Subtitles</b>. The project's other episodes use the same area.</li>
+    <li>Episodes are read one after another. Open one to check its subtitles with the keyboard.</li>
+  </ol>
+
+  <h2>Keyboard</h2>
+  <table>
+    <tr><td><kbd>A</kbd> <kbd>D</kbd></td><td>Move the selected start or end one frame back or forward.</td></tr>
+    <tr><td><kbd>W</kbd> <kbd>S</kbd></td><td>Select the start or the end of the subtitle.</td></tr>
+    <tr><td><kbd>P</kbd></td><td>Play the moment with the subtitle drawn on top; press again to stop.</td></tr>
+    <tr><td><kbd>Return</kbd></td><td>Edit the text. Return keeps it, Esc undoes, Option-Return starts a new line.</td></tr>
+    <tr><td><kbd>Space</kbd></td><td>Mark the subtitle checked and go to the next one.</td></tr>
+    <tr><td><kbd>⌫</kbd></td><td>Delete the selected subtitles.</td></tr>
+  </table>
+  <p class="muted">Every part of the app has an <b>ⓘ</b> button that explains it, and Help → Sublift Help has everything on one page.</p>
+
+  <h2>Questions</h2>
+
+  <h3>Which languages does Sublift read?</h3>
+  <p>Chinese. For bilingual subtitles, the translation line can be left out (Settings → Only Chinese lines).</p>
+
+  <h3>Which videos can I open?</h3>
+  <p>MP4, MKV, MOV, TS and other common files with H.264, HEVC, VP9 or AV1 video. AV1 needs a Mac with M3 or later. Sublift requires a Mac with Apple silicon.</p>
+
+  <h3>Where are my subtitles saved?</h3>
+  <p>In Sublift's own database, together with your checks and edits; every change is saved by itself. Sublift can also keep an up-to-date SRT next to each video (Settings), and you can export any episode, or a whole project into one folder.</p>
+
+  <h3>Why does Sublift ask for permission to write in a folder?</h3>
+  <p>macOS lets apps write only where you allow it. Sublift asks once per folder to keep the SRT next to your videos. If you say no, nothing is lost: the subtitles stay in Sublift and you can export them. To allow it later, right-click the episode and choose <b>Allow SRT Next to Video…</b>. Dropping a whole folder gives the permission at once.</p>
+
+  <h3>I moved my videos. What now?</h3>
+  <p>Sublift usually finds a moved or renamed video by itself. If it can't, right-click the episode and choose <b>Locate Video…</b>. Your subtitles and checks are kept.</p>
+
+  <h3>Some lines are marked as weak readings.</h3>
+  <p>Two recognition models read every line; when they don't fully agree, the line is marked so you can look at it. Choose <b>Weak</b> at the bottom of the list to see only those.</p>
+
+  <h3>How can I get the best results?</h3>
+  <ul>
+    <li>Make the subtitle area cover the subtitle line and not much more; text outside it (signs, titles, credits) is not read.</li>
+    <li>For yellow or other coloured subtitles, turn on <b>Coloured subtitles</b> in Settings.</li>
+  </ul>
+
+  <h3>Does Sublift upload my videos?</h3>
+  <p>No. Everything happens on your Mac, and Sublift collects no data. See the <a href="privacy.html">privacy policy</a>.</p>
+
+  <h2>Contact</h2>
+  <div class="contact">
+    <p style="margin:0">Write to <a href="mailto:cinrali@icloud.com?subject=Sublift">cinrali@icloud.com</a>.</p>
+    <p class="muted" style="margin:6px 0 0">Please include your Sublift version (Sublift → About Sublift), your Mac model, and, for a reading problem, a short description of the video and its subtitles.</p>
+  </div>
+
+  <footer>
+    <a href="index.html">Support</a><a href="privacy.html">Privacy Policy</a>
+    <span>© 2026 Muhammed Ali Çınar</span>
+  </footer>
+</main>
+</body>
+</html>
